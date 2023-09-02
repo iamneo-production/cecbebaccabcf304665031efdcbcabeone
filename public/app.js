@@ -2,7 +2,7 @@
 let cells = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let result = document.querySelector('.result');
-let btns = document.querySelectorAll('.btn');
+let btn = document.querySelectorAll('.btn');
 let conditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -62,7 +62,7 @@ const isBoardFull = () => {
 
 // Function to disable all buttons
 const disableButtons = () => {
-    btns.forEach(btn => btn.disabled = true);
+    btn.forEach(btn => btn.disabled = true);
 };
 
 // Function to reset the game
@@ -72,17 +72,17 @@ const resetGame = () => {
     currentPlayer = 'X';
 
     // Clear cell text content
-    btns.forEach(btn => btn.textContent = '');
+    btn.forEach(btn => btn.textContent = '');
 
     // Reset result message
     result.textContent = `Player ${currentPlayer}'s Turn`;
 
     // Enable all buttons
-    btns.forEach(btn => btn.disabled = false);
+    btn.forEach(btn => btn.disabled = false);
 };
 
 // Add click event listeners to buttons
-btns.forEach((btn, i) => {
+btn.forEach((btn, i) => {
     btn.addEventListener('click', () => ticTacToe(btn, i));
 });
 
